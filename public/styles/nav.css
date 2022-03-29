@@ -1,10 +1,14 @@
 nav {
-  display: flex;
   font-family: 'Bungee', sans-serif;
   background-color: #4056A1;
   color: #FFFFFF;
-  height: 120px;
+  min-height: 120px;
+  height: 8vh;
+
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   z-index: 999; /* 999 is top */
 }
@@ -12,14 +16,18 @@ nav {
 .logo {
   display: flex;
   padding: 1.5em;
-  font-size: 1.5em;
+  font-size: 1.7em;
 }
 
 .new-link {
   display: flex;
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 0.66666666666666667em; /* 1.5*0.67 = 1 */
+  font-size: 0.7em; /* 1.5*0.67 = 1 */
   padding: 1.5em;
-  flex-direction: column;
+  flex-flow: column nowrap;
   text-align: center;
+}
+
+.fas {
+  color: #ff0000
 }

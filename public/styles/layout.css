@@ -16,14 +16,27 @@ html {
 
 body {
   color: #ffffff; /* 545149 */
-  background-color: #000000; /* f4f1ec */
+  background-color: #222222; /* f4f1ec */
   /* font-size: 24px; */
   font-size: 1.5em; 
   /* 24/16 = 1.5 */
   font-family: 'Source Sans Pro', sans-serif;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
+main {
+  width: 90%;
+  /* background-color: #909090;  */
+  /* remove */
+  
+  display: flex;
+  justify-content: center;
+  flex-direction: column; /* column to match body */
+}

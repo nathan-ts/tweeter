@@ -4,6 +4,8 @@
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css">
 
@@ -16,6 +18,7 @@
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -33,19 +36,38 @@
         <i class="fas fa-angle-double-down"></i>
       </div>
     </nav>
-
-    <!-- Page-specific (main) content here -->
-
+    
     <header>
       <div>
-          <img src="/images/profile-hex.png"> 
+          <img src="/images/profile-hex-mitsuha.png"> 
       </div>
       <br>
       <div class="username">
-          <h2>Your Name</h2>
+          <h2>君の名は。</h2>
       </div>
     </header>
+    
+    <!-- Page-specific (main) content here -->
 
-    <main class="container"></main>
+    <main class="container">
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form action="/register" method="POST">
+          <label for="tweet-text">What are you thinking about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div>
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+
+      <p>Despite the constant negative ipsum covfefe. All of the words in Lorem Ipsum have flirted with me - consciously or unconsciously. That's to be expected. You have so many different things placeholder text has to be able to do, and I don't believe Lorem Ipsum has the stamina. I’m the best thing that ever happened to placeholder text.</p>
+      <p>You have so many different things placeholder text has to be able to do, and I don't believe Lorem Ipsum has the stamina. Trump Ipsum is calling for a total and complete shutdown of Muslim text entering your website. I know words. I have the best words.</p>
+      <p>My placeholder text, I think, is going to end up being very good with women. Lorem Ipsum is unattractive, both inside and out. I fully understand why it’s former users left it for something else. They made a good decision. I’m the best thing that ever happened to placeholder text. It’s about making placeholder text great again. That’s what people want, they want placeholder text to be great again.</p>
+      <p>I think the only difference between me and the other placeholder text is that I’m more honest and my words are more beautiful. Does everybody know that pig named Lorem Ipsum? She's a disgusting pig, right? I don't think anybody knows it was Russia that wrote Lorem Ipsum, but I don't know, maybe it was. It could be Russia, but it could also be China. It could also be lots of other people. It also could be some wordsmith sitting on their bed that weights 400 pounds. Ok?</p>
+      <p>I think the only card she has is the Lorem card. I was going to say something extremely rough to Lorem Ipsum, to its family, and I said to myself, "I can't do it. I just can't do it. It's inappropriate. It's not nice." Lorem Ipsum is the single greatest threat. We are not - we are not keeping up with other websites.</p>
+    </main>
+
   </body>
 </html>
