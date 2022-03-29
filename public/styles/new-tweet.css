@@ -16,7 +16,10 @@ textarea[name="text"] {
   background-color: transparent;
   color: white;
   font-weight: bold;
+  height: 2em;
+
 }
+
 
 .submit-counter {
   width: 100%;
@@ -26,7 +29,6 @@ textarea[name="text"] {
   flex-flow: row nowrap;
   justify-content: space-between;
 }
-
 
 button[type="submit"] {
   font-family: 'Bungee', sans-serif;
