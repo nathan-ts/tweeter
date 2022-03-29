@@ -1,4 +1,4 @@
-header {
+header.page-header {
   display: flex;
   min-height: 400px;
   height: 16.666666666666666666666667em;
@@ -6,15 +6,16 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 5em;
+  /* margin-top: 5em; */
+  /* margin-top not required when nav position sticky  */
 
   /* background-color: #854b6c; */
   /* background-image: url("https://www.transparenttextures.com/patterns/arches.png"); */
 
   /* This darkens and blends the background */
   background: rgba(0, 0, 0, 0.4) url(/images/bg.jpg);
-  background-blend-mode: darken;
   /* https://steamuserimages-a.akamaihd.net/ugc/1016067628656126735/DDC973F0E54452551ED5266EE61227C55C354066/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor= */
+  background-blend-mode: darken;
   background-size: cover;
 
 }

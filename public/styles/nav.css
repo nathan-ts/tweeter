@@ -6,8 +6,10 @@ nav {
   height: 5em;
   width: 100%;
   z-index: 999; /* 999 is top */
-  position: fixed;
+  position: sticky;
   top: 0;
+  /* position: fixed; */
+  /* position: fixed not required with sticky and top:0 */
 
   display: flex;
   flex-direction: row;
