@@ -15,11 +15,15 @@ html {
  */
 
 body {
-  color: #545149;
-  background-color: #f4f1ec;
-  font-size: 24px;
+  color: #ffffff; /* 545149 */
+  background-color: #000000; /* f4f1ec */
+  /* font-size: 24px; */
+  font-size: 1.5em; 
+  /* 24/16 = 1.5 */
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
