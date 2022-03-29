@@ -1,7 +1,7 @@
 .new-tweet {
   display: flex;
   flex-flow: column nowrap;
-
+  margin-bottom: 3em;
 }
 
 form[action="/tweets"] {
