@@ -1,0 +1,45 @@
+.new-tweet {
+  display: flex;
+  flex-flow: column nowrap;
+
+}
+
+form[action="/tweets"] {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+textarea[name="text"] {
+  border:none;
+  border-bottom: 0.2em solid #854b6c;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+}
+
+.submit-counter {
+  width: 100%;
+  padding-top: 1em;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+
+button[type="submit"] {
+  font-family: 'Bungee', sans-serif;
+  color: white;
+  background-color: #4056A1;
+  border: 0;
+  border-width: 0px;
+  border-color: white;
+  border-style: solid;
+  background-size: cover;
+}
+
+.counter {
+  font-family: 'Bungee', sans-serif;
+}
+

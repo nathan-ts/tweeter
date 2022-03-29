@@ -22,7 +22,7 @@ nav {
 .new-link {
   display: flex;
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 0.7em; /* 1.5*0.67 = 1 */
+  font-size: 0.7em;
   padding: 1.5em;
   flex-flow: column nowrap;
   text-align: center;
