@@ -1,11 +1,24 @@
 header {
   display: flex;
-  height: 400px;
+  min-height: 400px;
+  height: 16.666666666666666666666667em;
   width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #854b6c;
-  background-image: url("https://www.transparenttextures.com/patterns/arches.png");
-  object-fit: contain;
+  margin-top: 5em;
+
+  /* background-color: #854b6c; */
+  /* background-image: url("https://www.transparenttextures.com/patterns/arches.png"); */
+
+  /* This darkens and blends the background */
+  background: rgba(0, 0, 0, 0.4) url(/images/bg.jpg);
+  background-blend-mode: darken;
+  /* https://steamuserimages-a.akamaihd.net/ugc/1016067628656126735/DDC973F0E54452551ED5266EE61227C55C354066/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor= */
+  background-size: cover;
+
+}
+
+.username {
+  text-shadow: 4px 4px #0000ff;
 }
