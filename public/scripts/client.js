@@ -183,9 +183,13 @@ $( document ).ready(function() {
 
   // GET method to retrieve tweet database from server
   const loadTweets = function() {
+    // Delete error and hide error box
     $(".new-tweet-error").text("");
     $(".new-tweet-error").hide();
+    // Remove any text in the submission field
     $('#tweet-text').val('').change();
+    // Reset counter to 140
+    $('.counter').text("140");
     $.ajax('/tweets', { method: 'GET' })
     .then(function (tweetdb) {
       // console.log('Success: ', tweetdb); // debug console.log
