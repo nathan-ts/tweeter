@@ -45,10 +45,10 @@ nav {
 
 .btn-return-top {
   position: fixed;
-  height: 2.5em;
-  width: 2.5em;
-  bottom: 1.5em;
-  right: 1.5em;
+  height: 5vw;
+  width: 5vw;
+  bottom: 2.5vw;
+  right: 2.5vw;
   border-radius: 50%; 
   background-color: #854b6c;
 
