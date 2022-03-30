@@ -6,6 +6,7 @@
 
 
 // Test / driver code (temporary). Eventually will get this from the server.
+/*
 const tweetData = [
   {
   "user": {
@@ -95,6 +96,9 @@ const tweetData = [
     "created_at": 1461113959088
   }
 ];
+*/
+
+// <script>alert('uh-oh');</script>
 
 $( document ).ready(function() {
   // Use timeago.yarp.com function to parse time
@@ -103,11 +107,19 @@ $( document ).ready(function() {
   
   // Set up function to render all tweets from GET
   const renderTweets = function(tweets) {
+    $('.posts').empty();
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
       $('.posts').append($tweet); 
     }
   }
+
+  // Sanitizer for text
+  const sanitize = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
   // Set up function to generate HTML for a tweet object
   const createTweetElement = function(tweet) {
@@ -116,13 +128,13 @@ $( document ).ready(function() {
     <article class="tweet">
       <header>
         <div class="pic-name">
-          <img src="${tweet.user.avatars}">
-          <h4 class="display-name">${tweet.user.name}</h4>
+          <img src="${sanitize(tweet.user.avatars)}">
+          <h4 class="display-name">${sanitize(tweet.user.name)}</h4>
         </div>
-        <h4 class="handle">${tweet.user.handle}</h4>
+        <h4 class="handle">${sanitize(tweet.user.handle)}</h4>
       </header>
       <section class="tweet-content">
-        <p>${tweet.content.text}</p>
+        <p>${sanitize(tweet.content.text)}</p>
       </section>
       <footer>
         <a><time>${jQuery.timeago(new Date(tweet.created_at))}</time></a>
@@ -139,18 +151,35 @@ $( document ).ready(function() {
   
   // Custom submit behaviour for new-tweet-form
   $('#new-tweet-form').submit(function( event ) {
-    console.log(event);
+    // console.log(event);
+    // console.log($('#new-tweet-form'));
+    const tweetText = $(this).children('#tweet-text')[0].value;
+    console.log(tweetText);
     // Block default behaviour of reloading page
     event.preventDefault(); 
+    // Data validation of tweet (not empty OR <= 140 chars)
+    if (tweetText.length > 140) {
+      alert(`Error: tweet length is ${tweetText.length} — exceeds max of 140 chars.`);
+      return;
+    } else if (tweetText.length <= 0) {
+      alert("Error: tweet message is empty.");
+      return;
+    } 
     // Submit our own POST to the server
-    $.post ( "/tweets", $( '#new-tweet-form' ).serialize() );
+    // $.post ( "/tweets", $( '#new-tweet-form' ).serialize(), loadTweets );
+    $.ajax({
+      type: "POST",
+      url: "/tweets",
+      data: $( '#new-tweet-form' ).serialize(),
+      success: loadTweets
+    });
   });
 
   // GET method to retrieve tweet database from server
   const loadTweets = function() {
     $.ajax('/tweets', { method: 'GET' })
     .then(function (tweetdb) {
-      console.log('Success: ', tweetdb); // debug console.log
+      // console.log('Success: ', tweetdb); // debug console.log
       renderTweets(tweetdb);
     });
   }
