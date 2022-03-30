@@ -32,8 +32,8 @@ $(document).ready(function() {
     }
     // CODE TO EXECUTE when header enters view
     console.log('enter');
-    $('nav').slideDown('slow');
-    $('.btn-return-top').hide();
+    $('nav').fadeIn('slow');
+    $('.btn-return-top').fadeOut('slow');
   }, {
     root: null,
     threshold: 0.1, // set offset 0.1 means trigger if atleast 10% of element in viewport
@@ -46,8 +46,8 @@ $(document).ready(function() {
 
   // Button behaviour for return-to-top button visible when header scrolled out of view
   $('.btn-return-top').on("click", function() {
+    $('.new-tweet').show();
     document.getElementsByTagName('html')[0].scrollIntoView({ behavior: "smooth" })
-    $('.new-tweet').slideDown('fast');
 
   });
   // https://stackoverflow.com/questions/1144805/scroll-to-the-top-of-the-page-using-javascript
