@@ -135,12 +135,15 @@ $( document ).ready(function() {
     return markup;
   };
 
-  $('#new-tweet-form').submit(function( event ) {
-    console.log(event);
-    event.preventDefault();
-  });
-
   renderTweets(tweetData); // test code call
   
+  $('#new-tweet-form').submit(function( event ) {
+    console.log(event);
+    // Block default behaviour of reloading page
+    event.preventDefault(); 
+    // Submit our own POST to the server
+    $.post ( "/tweets", $( '#new-tweet-form' ).serialize() );
+  });
+
 });
 
