@@ -101,6 +101,9 @@ const tweetData = [
 // <script>alert('uh-oh');</script>
 
 $( document ).ready(function() {
+  // Hide error box on load
+  $(".new-tweet-error").hide();
+
   // Use timeago.yarp.com function to parse time
   jQuery("time.timeago").timeago(); 
   jQuery.timeago.settings.allowFuture = false;
@@ -110,7 +113,7 @@ $( document ).ready(function() {
     $('.posts').empty();
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
-      $('.posts').append($tweet); 
+      $('.posts').prepend($tweet); 
     }
   }
 
@@ -151,22 +154,25 @@ $( document ).ready(function() {
   
   // Custom submit behaviour for new-tweet-form
   $('#new-tweet-form').submit(function( event ) {
-    // console.log(event);
-    // console.log($('#new-tweet-form'));
     const tweetText = $(this).children('#tweet-text')[0].value;
-    console.log(tweetText);
+    $(".new-tweet-error").slideUp('fast'); // hide error message on submit, and show if required
+    // console.log(tweetText);
+
     // Block default behaviour of reloading page
     event.preventDefault(); 
     // Data validation of tweet (not empty OR <= 140 chars)
     if (tweetText.length > 140) {
-      alert(`Error: tweet length is ${tweetText.length} — exceeds max of 140 chars.`);
+      const err = `Error: tweet length is ${tweetText.length} — exceeds max of 140 chars.`;
+      $(".new-tweet-error").text(err);
+      $(".new-tweet-error").slideDown('fast');
       return;
     } else if (tweetText.length <= 0) {
-      alert("Error: tweet message is empty.");
+      const err = "Error: tweet message is empty.";
+      $(".new-tweet-error").text(err);
+      $(".new-tweet-error").slideDown('fast');
       return;
     } 
     // Submit our own POST to the server
-    // $.post ( "/tweets", $( '#new-tweet-form' ).serialize(), loadTweets );
     $.ajax({
       type: "POST",
       url: "/tweets",
@@ -177,6 +183,9 @@ $( document ).ready(function() {
 
   // GET method to retrieve tweet database from server
   const loadTweets = function() {
+    $(".new-tweet-error").text("");
+    $(".new-tweet-error").hide();
+    $('#tweet-text').val('').change();
     $.ajax('/tweets', { method: 'GET' })
     .then(function (tweetdb) {
       // console.log('Success: ', tweetdb); // debug console.log
@@ -184,7 +193,7 @@ $( document ).ready(function() {
     });
   }
 
-  loadTweets(); // test code to load tweets; loads tweets on page load.
+  loadTweets(); // loads tweets on page load.
 
 });
 

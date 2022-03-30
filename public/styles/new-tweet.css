@@ -1,7 +1,7 @@
 .new-tweet {
   display: flex;
   flex-flow: column nowrap;
-  margin-bottom: 3em;
+  margin-bottom: 2em;
 }
 
 #new-tweet-form {
@@ -23,6 +23,7 @@ textarea[name="text"] {
 .submit-counter {
   width: 100%;
   padding-top: 1em;
+  margin-bottom: 1em;
   font-family: 'Bungee', sans-serif;
 
   display: flex;
@@ -40,7 +41,8 @@ button[type="submit"] {
   background-size: cover;
 }
 
-/* .counter {
-
-} */
-
+.new-tweet-error {
+  color: red;
+  border: 0.2em solid red;
+  padding: 0.2em;
+}
