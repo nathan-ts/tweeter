@@ -9,6 +9,72 @@
 const tweetData = [
   {
   "user": {
+    "name": "Mitsuha",
+    "avatars": "/images/profile-hex-mitsuha.png",
+      "handle": "@notTakiKun"
+    },
+  "content": {
+      "text": "If we see each other, we'll know. That you were the one who was inside me. That I was the one who was inside you."
+    },
+  "created_at": 1648667050000
+  }, 
+  {
+  "user": {
+    "name": "Mitsuha",
+    "avatars": "/images/profile-hex-mitsuha.png",
+      "handle": "@notTakiKun"
+    },
+  "content": {
+      "text": "I want to graduate and go to Tokyo!"
+    },
+  "created_at": 1648487203000
+  }, 
+  {
+  "user": {
+    "name": "Mitsuha",
+    "avatars": "/images/profile-hex-mitsuha.png",
+      "handle": "@notTakiKun"
+    },
+  "content": {
+      "text": "This feeling has possessed me, I think, from that day..."
+    },
+  "created_at": 1647450403000
+  }, 
+  {
+  "user": {
+    "name": "Mitsuha",
+    "avatars": "/images/profile-hex-mitsuha.png",
+      "handle": "@notTakiKun"
+    },
+  "content": {
+      "text": "But... the sensation that I've lost something lingers for a long time after I wake up."
+    },
+  "created_at": 1646759203000
+  }, 
+  {
+  "user": {
+    "name": "Mitsuha",
+    "avatars": "/images/profile-hex-mitsuha.png",
+      "handle": "@notTakiKun"
+    },
+  "content": {
+      "text": "The only thing that does last when I wake up is a sense of loss."
+    },
+  "created_at": 1644944803000
+  }, 
+  {
+  "user": {
+    "name": "Mitsuha",
+    "avatars": "/images/profile-hex-mitsuha.png",
+      "handle": "@notTakiKun"
+    },
+  "content": {
+      "text": "Once in a while when I wake up. I find myself crying."
+    },
+  "created_at": 1644512803000
+  }, 
+  {
+  "user": {
     "name": "Newton",
     "avatars": "https://i.imgur.com/73hZDYK.png",
       "handle": "@SirIsaac"
@@ -16,13 +82,13 @@ const tweetData = [
   "content": {
       "text": "If I have seen further it is by standing on the shoulders of giants."
     },
-  "created_at": 1461116232227
+  "created_at": 1583687203000
   }, 
   {
     "user": {
       "name": "Descartes",
       "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
+      "handle": "@rened" },
     "content": {
       "text": "Je pense , donc je suis"
     },
@@ -71,13 +137,5 @@ $( document ).ready(function() {
 
   renderTweets(tweetData);
   
-  // const $tweet = createTweetElement(tweetData);
-  
-  // Test / driver code (temporary)
-  // console.log($tweet); // to see what it looks like
-  // $('.posts').append($tweet); 
-  // to add it to the page so we can make sure it's got all the right elements, classes, etc.
-
-}
-);
+});
 
