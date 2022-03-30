@@ -17,7 +17,7 @@ textarea[name="text"] {
   color: white;
   font-weight: bold;
   height: 2em;
-
+  resize: none;
 }
 
 .submit-counter {

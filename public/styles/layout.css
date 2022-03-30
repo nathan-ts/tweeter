@@ -39,6 +39,6 @@ main {
   display: flex;
   justify-content: center;
   flex-direction: column; /* column to match body */
-  color: #80fff200
+  color: #ffffff
 }
 

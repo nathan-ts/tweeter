@@ -4,7 +4,7 @@
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
-    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css">
@@ -24,6 +24,12 @@
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="http://timeago.yarp.com/jquery.timeago.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function() {
+        $("time.timeago").timeago();
+      });
+   </script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
@@ -53,6 +59,7 @@
     <!-- Page-specific (main) content here -->
 
     <main class="container">
+
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form action="/tweets" method="POST">
@@ -64,6 +71,7 @@
           </div>
         </form>
       </section>
+
       <section class="posts">
         <article class="tweet">
           <header>
@@ -86,14 +94,12 @@
           </footer>
         </article>
 
-        <p>Once in a while when I wake up. I find myself crying.</p>
+        <!-- <p>Once in a while when I wake up. I find myself crying.</p>
         <p>The only thing that does last when I wake up is a sense of loss.</p>
         <p>But... the sensation that I've lost something lingers for a long time after I wake up.</p>
         <p>This feeling has possessed me, I think, from that day...</p>
-
         <p>I want to graduate and go to Tokyo!</p>
-
-        <p>My name is... Mitsuha.</p>
+        <p>My name is... Mitsuha.</p> -->
       </section>
 
     </main>

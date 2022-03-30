@@ -11,6 +11,7 @@ section.posts {
 article.tweet {
   border: 0.2em solid #854b6c;
   padding: 0.5em;
+  margin-bottom: 1em;
 }
 
 article.tweet:hover {
@@ -45,7 +46,9 @@ article.tweet header .display-name {
 
 article.tweet header img {
   max-height: var(--header-height);
+  max-width: var(--header-height);
   margin-right: var(--pad-left-right);
+  border-radius: 50%;
 }
 
 article.tweet header .handle {

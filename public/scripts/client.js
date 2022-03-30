@@ -4,6 +4,63 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const createTweetElement = function(tweet) {
 
-};
+// Test / driver code (temporary). Eventually will get this from the server.
+const tweetData = {
+  "user": {
+    "name": "Newton",
+    "avatars": "https://i.imgur.com/73hZDYK.png",
+      "handle": "@SirIsaac"
+    },
+  "content": {
+      "text": "If I have seen further it is by standing on the shoulders of giants."
+    },
+  "created_at": 1461116232227
+}
+
+
+$( document ).ready(function() {
+
+  jQuery("time.timeago").timeago(); // Uses timeago.yarp.com function to parse time
+  jQuery.timeago.settings.allowFuture = false;
+
+  const createTweetElement = function(tweet) {
+    const time = new Date(tweet.created_at);
+    const markup = `
+    <article class="tweet">
+      <header>
+        <div class="pic-name">
+          <img src="${tweet.user.avatars}">
+          <h4 class="display-name">${tweet.user.name}</h4>
+        </div>
+        <h4 class="handle">${tweet.user.handle}</h4>
+      </header>
+      <section class="tweet-content">
+        <p>${tweet.content.text}</p>
+      </section>
+      <footer>
+        <a><time>${jQuery.timeago(new Date(tweet.created_at))}</time></a>
+        <section class="footer-icons">
+          <a class="fa-solid fa-flag"></a>
+          <a class="fa-solid fa-retweet"></a>
+          <a class="fa-solid fa-heart"></a>
+        </section>
+      </footer>
+    </article>`;
+  
+    return markup;
+  };
+
+
+  
+  const $tweet = createTweetElement(tweetData);
+  
+  // Test / driver code (temporary)
+  console.log($tweet); // to see what it looks like
+  // $('#tweets-container').append($tweet); 
+  $('.posts').append($tweet); 
+  // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+
+}
+);
+
