@@ -135,7 +135,12 @@ $( document ).ready(function() {
     return markup;
   };
 
-  renderTweets(tweetData);
+  $('#new-tweet-form').submit(function( event ) {
+    console.log(event);
+    event.preventDefault();
+  });
+
+  renderTweets(tweetData); // test code call
   
 });
 

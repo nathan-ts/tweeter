@@ -25,11 +25,13 @@
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="http://timeago.yarp.com/jquery.timeago.js"></script>
-    <script type="text/javascript">
-      jQuery(document).ready(function() {
-        $("time.timeago").timeago();
-      });
-   </script>
+      <!-- TimeAgo init -->
+      <script type="text/javascript">
+        jQuery(document).ready(function() {
+          $("time.timeago").timeago();
+        });
+      </script>
+    
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
@@ -46,6 +48,7 @@
       </div>
     </nav>
     
+    <!-- Header for current user -->
     <header class="page-header">
       <div class="profile-pic">
         <img src="/images/profile-hex-mitsuha.png"> 
@@ -62,8 +65,7 @@
 
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form action="/tweets" method="POST">
-          <!-- <label for="tweet-text">What are you thinking about?</label> -->
+        <form id="new-tweet-form" action="/tweets" method="POST">
           <textarea name="text" id="tweet-text" placeholder="What are you thinking about?"></textarea>
           <div class="submit-counter">
             <button type="submit">Tweet</button>
@@ -93,7 +95,7 @@
             </section>
           </footer>
         </article> -->
-        
+
       </section>
 
     </main>
