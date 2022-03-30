@@ -183,6 +183,8 @@ $( document ).ready(function() {
 
   // GET method to retrieve tweet database from server
   const loadTweets = function() {
+    // Hide new-tweet box (reveals through nav-bar button)
+    $('.new-tweet').hide();
     // Delete error and hide error box
     $(".new-tweet-error").text("");
     $(".new-tweet-error").hide();
@@ -198,6 +200,11 @@ $( document ).ready(function() {
   }
 
   loadTweets(); // loads tweets on page load.
+
+  // Button behaviour for new tweet in nav-bar
+  $('.new-link').on("click", function() {
+    $('.new-tweet').slideToggle('fast');
+  });
 
 });
 

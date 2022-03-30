@@ -1,5 +1,6 @@
 section.posts {
   width: 100%;
+  padding-top: 5vw; /* matches 5% gap on each side since main container is 90% width */
 
   display: flex; 
   flex-direction: column;

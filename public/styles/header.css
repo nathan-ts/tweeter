@@ -6,8 +6,6 @@ header.page-header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* margin-top: 5em; */
-  /* margin-top not required when nav position sticky  */
 
   /* background-color: #854b6c; */
   /* background-image: url("https://www.transparenttextures.com/patterns/arches.png"); */

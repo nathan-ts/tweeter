@@ -1,7 +1,6 @@
 .new-tweet {
   display: flex;
   flex-flow: column nowrap;
-  margin-bottom: 2em;
 }
 
 #new-tweet-form {
@@ -10,20 +9,19 @@
 }
 
 textarea[name="text"] {
+  min-height: 2em;
   border: none;
   border-bottom: 0.2em solid #854b6c;
   outline: none;
   background-color: transparent;
   color: white;
   font-weight: bold;
-  height: 2em;
   resize: none;
 }
 
 .submit-counter {
   width: 100%;
   padding-top: 1em;
-  margin-bottom: 1em;
   font-family: 'Bungee', sans-serif;
 
   display: flex;
@@ -45,4 +43,5 @@ button[type="submit"] {
   color: red;
   border: 0.2em solid red;
   padding: 0.2em;
+  margin-bottom: 1em;
 }
