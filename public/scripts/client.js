@@ -97,10 +97,11 @@ const tweetData = [
 ];
 
 $( document ).ready(function() {
-
-  jQuery("time.timeago").timeago(); // Uses timeago.yarp.com function to parse time
+  // Use timeago.yarp.com function to parse time
+  jQuery("time.timeago").timeago(); 
   jQuery.timeago.settings.allowFuture = false;
-
+  
+  // Set up function to render all tweets from GET
   const renderTweets = function(tweets) {
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
@@ -108,6 +109,7 @@ $( document ).ready(function() {
     }
   }
 
+  // Set up function to generate HTML for a tweet object
   const createTweetElement = function(tweet) {
     const time = new Date(tweet.created_at);
     const markup = `
@@ -134,9 +136,8 @@ $( document ).ready(function() {
   
     return markup;
   };
-
-  renderTweets(tweetData); // test code call
   
+  // Custom submit behaviour for new-tweet-form
   $('#new-tweet-form').submit(function( event ) {
     console.log(event);
     // Block default behaviour of reloading page
@@ -144,6 +145,17 @@ $( document ).ready(function() {
     // Submit our own POST to the server
     $.post ( "/tweets", $( '#new-tweet-form' ).serialize() );
   });
+
+  // GET method to retrieve tweet database from server
+  const loadTweets = function() {
+    $.ajax('/tweets', { method: 'GET' })
+    .then(function (tweetdb) {
+      console.log('Success: ', tweetdb); // debug console.log
+      renderTweets(tweetdb);
+    });
+  }
+
+  loadTweets(); // test code to load tweets; loads tweets on page load.
 
 });
 
