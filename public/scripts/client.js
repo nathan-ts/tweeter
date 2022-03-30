@@ -6,7 +6,8 @@
 
 
 // Test / driver code (temporary). Eventually will get this from the server.
-const tweetData = {
+const tweetData = [
+  {
   "user": {
     "name": "Newton",
     "avatars": "https://i.imgur.com/73hZDYK.png",
@@ -16,13 +17,30 @@ const tweetData = {
       "text": "If I have seen further it is by standing on the shoulders of giants."
     },
   "created_at": 1461116232227
-}
-
+  }, 
+  {
+    "user": {
+      "name": "Descartes",
+      "avatars": "https://i.imgur.com/nlhLi3I.png",
+      "handle": "@rd" },
+    "content": {
+      "text": "Je pense , donc je suis"
+    },
+    "created_at": 1461113959088
+  }
+];
 
 $( document ).ready(function() {
 
   jQuery("time.timeago").timeago(); // Uses timeago.yarp.com function to parse time
   jQuery.timeago.settings.allowFuture = false;
+
+  const renderTweets = function(tweets) {
+    for (const tweet of tweets) {
+      const $tweet = createTweetElement(tweet);
+      $('.posts').append($tweet); 
+    }
+  }
 
   const createTweetElement = function(tweet) {
     const time = new Date(tweet.created_at);
@@ -51,14 +69,13 @@ $( document ).ready(function() {
     return markup;
   };
 
-
+  renderTweets(tweetData);
   
-  const $tweet = createTweetElement(tweetData);
+  // const $tweet = createTweetElement(tweetData);
   
   // Test / driver code (temporary)
-  console.log($tweet); // to see what it looks like
-  // $('#tweets-container').append($tweet); 
-  $('.posts').append($tweet); 
+  // console.log($tweet); // to see what it looks like
+  // $('.posts').append($tweet); 
   // to add it to the page so we can make sure it's got all the right elements, classes, etc.
 
 }
