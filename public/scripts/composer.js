@@ -14,7 +14,8 @@ $(document).ready(function() {
   })
 
   // Observer on header (when it scrolls out of viewport)
-  const pageHeader = document.querySelector('.page-header')
+  // https://stackoverflow.com/questions/123999/how-can-i-tell-if-a-dom-element-is-visible-in-the-current-viewport
+  const scrollHelper = document.querySelector('.scroll-helper');
   const observer = new window.IntersectionObserver(([entry]) => {
     if (!entry.isIntersecting) {
       // CODE TO EXECUTE when header scrolls out of view
@@ -27,12 +28,11 @@ $(document).ready(function() {
     $('.btn-return-top').fadeOut('slow');
   },{
     root: null,
-    threshold: 0.05, // set offset 0.1 means trigger if atleast 10% of element in viewport
+    threshold: 0.1, // set offset 0.1 means trigger if atleast 10% of element in viewport
   })
-  // https://stackoverflow.com/questions/123999/how-can-i-tell-if-a-dom-element-is-visible-in-the-current-viewport
 
   // Start Intersection Observer and hide return-top button
-  observer.observe(pageHeader);
+  observer.observe(scrollHelper);
   $('.btn-return-top').hide();
 
   // Button behaviour for return-to-top button visible when header scrolled out of view
