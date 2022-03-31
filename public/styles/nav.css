@@ -1,13 +1,13 @@
 nav {
   font-family: 'Bungee', sans-serif;
-  background-color: #4056A1;
+  /* background-color: #4056A1; */
   color: #FFFFFF;
   min-height: 120px;
   height: 5em;
   width: 100%;
   padding: 1em;
   z-index: 999; /* 999 is top */
-  position: sticky;
+  /* position: sticky; */
   top: 0;
 
   display: flex;

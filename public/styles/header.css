@@ -3,7 +3,7 @@ header.page-header {
   
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 
   /* This darkens and blends the background */

@@ -44,10 +44,17 @@ main {
   color: #ffffff
 }
 
+/* Other header styling in header.css */
 header.page-header {
   width: 100%;
   position: relative;
-  min-height: 400px;
+  height: 500px;
+}
+
+/* Other nav styling in nav.csss */
+nav {
+  position: fixed;
+  background-color: transparent;
 }
 
 /* Tablet View */
@@ -62,6 +69,11 @@ header.page-header {
 
   main {
     width: 70%;
+  }
+
+  nav {
+    position: sticky;
+    background-color: #4056A1;
   }
 }
 
