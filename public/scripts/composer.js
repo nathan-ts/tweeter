@@ -25,13 +25,11 @@ $(document).ready(function() {
   const observer = new window.IntersectionObserver(([entry]) => {
     if (!entry.isIntersecting) {
       // CODE TO EXECUTE when header scrolls out of view
-      console.log('leave');
       $('nav').fadeOut('slow');
       $('.btn-return-top').fadeIn('slow');
       return
     }
     // CODE TO EXECUTE when header enters view
-    console.log('enter');
     $('nav').fadeIn('slow');
     $('.btn-return-top').fadeOut('slow');
   }, {
@@ -48,7 +46,7 @@ $(document).ready(function() {
   $('.btn-return-top').on("click", function() {
     $('.new-tweet').show();
     document.getElementsByTagName('html')[0].scrollIntoView({ behavior: "smooth" })
-
+    $('.tweet-text').focus();
   });
   // https://stackoverflow.com/questions/1144805/scroll-to-the-top-of-the-page-using-javascript
 

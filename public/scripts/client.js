@@ -154,9 +154,9 @@ $( document ).ready(function() {
   
   // Custom submit behaviour for new-tweet-form
   $('#new-tweet-form').submit(function( event ) {
+    // Get tweet text from form
     const tweetText = $(this).children('#tweet-text')[0].value;
     $(".new-tweet-error").slideUp('fast'); // hide error message on submit, and show if required
-    // console.log(tweetText);
 
     // Block default behaviour of reloading page
     event.preventDefault(); 
@@ -183,15 +183,7 @@ $( document ).ready(function() {
 
   // GET method to retrieve tweet database from server
   const loadTweets = function() {
-    // Hide new-tweet box (reveals through nav-bar button)
-    $('.new-tweet').hide();
-    // Delete error and hide error box
-    $(".new-tweet-error").text("");
-    $(".new-tweet-error").hide();
-    // Remove any text in the submission field
-    $('#tweet-text').val('').change();
-    // Reset counter to 140
-    $('.counter').text("140");
+    cleanNewTweet();
     $.ajax('/tweets', { method: 'GET' })
     .then(function (tweetdb) {
       // console.log('Success: ', tweetdb); // debug console.log
@@ -199,7 +191,19 @@ $( document ).ready(function() {
     });
   }
 
-  loadTweets(); // loads tweets on page load.
+  const cleanNewTweet = function() {
+    // Hide new-tweet box (reveals through nav-bar button)
+    $('.new-tweet').hide();
+    // Delete error and hide error box
+    $(".new-tweet-error").text("");
+    $(".new-tweet-error").hide();
+    // Remove any text in the submission field
+    $('#tweet-text').val('');
+    // Reset counter to 140
+    $('.counter').text("140");
+  }
+
+  loadTweets(); // loads tweets on page load
 
   // Button behaviour for new tweet in nav-bar
   $('.new-link').on("click", function() {
