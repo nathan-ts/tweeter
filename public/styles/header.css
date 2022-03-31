@@ -1,6 +1,6 @@
 header.page-header {
   z-index: 998; /* 999 is top */
-  min-height: 400px;
+  /* min-height: 400px; */
   /* Height and width controlled in layout.css */
   /* height: 16.666666666666666666666667em; */
   /* width: 100%; */

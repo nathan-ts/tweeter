@@ -36,7 +36,7 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- /* Mobile/Tablet view */
+ /* Mobile view */
 
 main {
   /* width: 90%; */
@@ -53,15 +53,16 @@ main {
 header.page-header {
   width: 100%;
   position: relative;
+  min-height: 400px;
 }
 
-/* Desktop View */
+/* Tablet View */
 
 @media only screen and (min-width: 768px) {
   header.page-header {
     width: 30%;
     position: sticky;
-    top: 25vh;
+    top: max(25vh, calc(5vw + 5em));
     height: 50vh;
   }
 
@@ -70,6 +71,15 @@ header.page-header {
   }
 }
 
-.scroll-helper {
-  height: 1px;
+/* Desktop view */
+
+@media only screen and (min-width: 992px) {
+  header.page-header {
+    width: 25%;
+    margin-left: 5%;
+  }
+
+  /* main {
+    max-width: 50em; 
+  } */
 }
