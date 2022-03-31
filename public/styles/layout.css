@@ -17,17 +17,15 @@ html {
 body {
   color: #ffffff; /* 545149 */
   background-color: #222222; /* f4f1ec */
-  /* font-size: 24px; */
-  font-size: 1.5em; 
-  /* 24/16 = 1.5 */
+  font-size: 1.5em; /* 24px/16px = 1.5em */
   font-family: 'Source Sans Pro', sans-serif;
 
-  display: flex;
+  /* display: flex; */
   /* align-items: center; */
   /* flex-direction: column; */
 
-  /* display: -webkit-flex; */
-  /* display: flex; */
+  display: -webkit-flex;
+  display: flex;
   -webkit-flex-flow: row wrap;
   flex-flow: row wrap;
 }
@@ -77,6 +75,10 @@ header.page-header {
   header.page-header {
     width: 25%;
     margin-left: 5%;
+  }
+
+  body {
+    font-size: 1.625em; /* Increase font size to 26px on desktop mode */
   }
 
   /* main {
