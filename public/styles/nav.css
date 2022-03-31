@@ -50,8 +50,8 @@ nav {
   min-height: 1.5em;
   width: 5vw;
   min-width: 1.5em;
-  bottom: 2.5vw;
-  right: 2.5vw;
+  bottom: calc(2.5vw + 0.1em);
+  right: calc(2.5vw + 0.1em);
   border-radius: 50%; 
   background-color: #854b6c;
 
