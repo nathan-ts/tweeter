@@ -13,13 +13,6 @@ $(document).ready(function() {
     $(this).next().children('output').html(remain);
   })
 
-  // $(window).scroll(
-  //   function (event) {
-  //     var scrolled_val = window.scrollY;
-  //     console.log("Scroll:",scrolled_val);
-  //   }
-  // );
-
   // Observer on header (when it scrolls out of viewport)
   const pageHeader = document.querySelector('.page-header')
   const observer = new window.IntersectionObserver(([entry]) => {
@@ -32,7 +25,7 @@ $(document).ready(function() {
     // CODE TO EXECUTE when header enters view
     $('nav').fadeIn('slow');
     $('.btn-return-top').fadeOut('slow');
-  }, {
+  },{
     root: null,
     threshold: 0.05, // set offset 0.1 means trigger if atleast 10% of element in viewport
   })
@@ -44,8 +37,14 @@ $(document).ready(function() {
 
   // Button behaviour for return-to-top button visible when header scrolled out of view
   $('.btn-return-top').on("click", function() {
+    // Delete error and hide error box
+    $(".new-tweet-error").text("");
+    $(".new-tweet-error").hide();
+    // Open new tweet field
     $('.new-tweet').slideDown('fast');
+    // Scroll to top of page
     document.getElementsByTagName('html')[0].scrollIntoView({ behavior: "smooth" })
+    // Cursor focus on new tweet text area
     $('#tweet-text').focus();
   });
   // https://stackoverflow.com/questions/1144805/scroll-to-the-top-of-the-page-using-javascript

@@ -13,6 +13,7 @@ article.tweet {
   border: 0.1em solid #854b6c;
   padding: 0.5em;
   margin-bottom: 1em;
+  word-wrap: break-word
 }
 
 article.tweet:hover {
