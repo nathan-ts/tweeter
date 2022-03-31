@@ -1,90 +1,68 @@
 [
   {
     "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1648074939698
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1648161339698
-  },
-  {
-    "user": {
       "name": "Mitsuha",
-      "avatars": "/images/profile-hex-mitsuha.png",
+      "avatars": "/images/pfp-mitsuha.png",
       "handle": "@miko_miyamizu"
     },
     "content": {
       "text": "Once in a while when I wake up. I find myself crying."
     },
-    "created_at": 1648247739698
+    "created_at": 1648249584839
   },
   {
     "user": {
       "name": "Mitsuha",
-      "avatars": "/images/profile-hex-mitsuha.png",
+      "avatars": "/images/pfp-mitsuha.png",
       "handle": "@miko_miyamizu"
     },
     "content": {
       "text": "The only thing that does last when I wake up is a sense of loss."
     },
-    "created_at": 1648334139698
+    "created_at": 1648335984839
   },
   {
     "user": {
       "name": "Mitsuha",
-      "avatars": "/images/profile-hex-mitsuha.png",
+      "avatars": "/images/pfp-mitsuha.png",
       "handle": "@miko_miyamizu"
     },
     "content": {
       "text": "But... the sensation that I've lost something lingers for a long time after I wake up."
     },
-    "created_at": 1648420539698
+    "created_at": 1648422384839
   },
   {
     "user": {
       "name": "Mitsuha",
-      "avatars": "/images/profile-hex-mitsuha.png",
+      "avatars": "/images/pfp-mitsuha.png",
       "handle": "@miko_miyamizu"
     },
     "content": {
       "text": "This feeling has possessed me, I think, from that day..."
     },
-    "created_at": 1648506939698
+    "created_at": 1648508784839
   },
   {
     "user": {
       "name": "Mitsuha",
-      "avatars": "/images/profile-hex-mitsuha.png",
+      "avatars": "/images/pfp-mitsuha.png",
       "handle": "@miko_miyamizu"
     },
     "content": {
       "text": "I want to graduate and go to Tokyo!"
     },
-    "created_at": 1648593339698
+    "created_at": 1648595184839
   },
   {
     "user": {
       "name": "Mitsuha",
-      "avatars": "/images/profile-hex-mitsuha.png",
+      "avatars": "/images/pfp-mitsuha.png",
       "handle": "@miko_miyamizu"
     },
     "content": {
       "text": "If we see each other, we'll know."
     },
-    "created_at": 1648679739698
+    "created_at": 1648681584839
   }
 ]
