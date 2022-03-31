@@ -157,10 +157,10 @@ $( document ).ready(function() {
     // Get tweet text from form
     const tweetText = $(this).children('#tweet-text')[0].value;
     $(".new-tweet-error").slideUp('fast'); // hide error message on submit, and show if required
-
     // Block default behaviour of reloading page
     event.preventDefault(); 
     // Data validation of tweet (not empty OR <= 140 chars)
+    // can be DRYed up
     if (tweetText.length > 140) {
       const err = `Error: tweet length is ${tweetText.length} — exceeds max of 140 chars.`;
       $(".new-tweet-error").text(err);
