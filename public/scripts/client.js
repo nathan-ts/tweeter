@@ -1,104 +1,7 @@
 /*
  * Client-side JS logic goes here
  * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-
-
-// Test / driver code (temporary). Eventually will get this from the server.
-/*
-const tweetData = [
-  {
-  "user": {
-    "name": "Mitsuha",
-    "avatars": "/images/profile-hex-mitsuha.png",
-      "handle": "@notTakiKun"
-    },
-  "content": {
-      "text": "If we see each other, we'll know. That you were the one who was inside me. That I was the one who was inside you."
-    },
-  "created_at": 1648667050000
-  }, 
-  {
-  "user": {
-    "name": "Mitsuha",
-    "avatars": "/images/profile-hex-mitsuha.png",
-      "handle": "@notTakiKun"
-    },
-  "content": {
-      "text": "I want to graduate and go to Tokyo!"
-    },
-  "created_at": 1648487203000
-  }, 
-  {
-  "user": {
-    "name": "Mitsuha",
-    "avatars": "/images/profile-hex-mitsuha.png",
-      "handle": "@notTakiKun"
-    },
-  "content": {
-      "text": "This feeling has possessed me, I think, from that day..."
-    },
-  "created_at": 1647450403000
-  }, 
-  {
-  "user": {
-    "name": "Mitsuha",
-    "avatars": "/images/profile-hex-mitsuha.png",
-      "handle": "@notTakiKun"
-    },
-  "content": {
-      "text": "But... the sensation that I've lost something lingers for a long time after I wake up."
-    },
-  "created_at": 1646759203000
-  }, 
-  {
-  "user": {
-    "name": "Mitsuha",
-    "avatars": "/images/profile-hex-mitsuha.png",
-      "handle": "@notTakiKun"
-    },
-  "content": {
-      "text": "The only thing that does last when I wake up is a sense of loss."
-    },
-  "created_at": 1644944803000
-  }, 
-  {
-  "user": {
-    "name": "Mitsuha",
-    "avatars": "/images/profile-hex-mitsuha.png",
-      "handle": "@notTakiKun"
-    },
-  "content": {
-      "text": "Once in a while when I wake up. I find myself crying."
-    },
-  "created_at": 1644512803000
-  }, 
-  {
-  "user": {
-    "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-  "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants."
-    },
-  "created_at": 1583687203000
-  }, 
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rened" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-];
-*/
-
-// <script>alert('uh-oh');</script>
 
 $( document ).ready(function() {
   // Hide error box on load
@@ -117,14 +20,14 @@ $( document ).ready(function() {
     }
   }
 
-  // Sanitizer for text
+  // Sanitize text submitted by user
   const sanitize = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
-  // Set up function to generate HTML for a tweet object
+  // Generate HTML for a tweet object
   const createTweetElement = function(tweet) {
     const time = new Date(tweet.created_at);
     const markup = `
@@ -148,11 +51,10 @@ $( document ).ready(function() {
         </section>
       </footer>
     </article>`;
-  
     return markup;
   };
   
-  // Custom submit behaviour for new-tweet-form
+  // Custom submit behaviour (POST) for new-tweet-form
   $('#new-tweet-form').submit(function( event ) {
     // Block default behaviour of reloading page
     event.preventDefault(); 
@@ -160,8 +62,8 @@ $( document ).ready(function() {
     const tweetText = $(this).children('#tweet-text')[0].value;
     $(".new-tweet-error").text("");
     $(".new-tweet-error").slideUp('fast'); // hide error message on submit, and show if required
+
     // Data validation of tweet (not empty OR <= 140 chars)
-    // can be DRYed up
     if (tweetText.length > 140) {
       const err = `Error: tweet length is ${tweetText.length} — exceeds max of 140 chars.`;
       $(".new-tweet-error").text(err);
@@ -173,6 +75,7 @@ $( document ).ready(function() {
       $(".new-tweet-error").slideDown('fast');
       return;
     } 
+
     // Submit our own POST to the server
     $.ajax({
       type: "POST",
@@ -192,6 +95,7 @@ $( document ).ready(function() {
     });
   }
 
+  // Helper function to reset new-tweet box
   const cleanNewTweet = function() {
     // Hide new-tweet box (reveals through nav-bar button)
     $('.new-tweet').hide();

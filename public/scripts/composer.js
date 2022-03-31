@@ -36,6 +36,7 @@ $(document).ready(function() {
   $('.btn-return-top').hide();
 
   // Button behaviour for return-to-top button visible when header scrolled out of view
+  // https://stackoverflow.com/questions/1144805/scroll-to-the-top-of-the-page-using-javascript
   $('.btn-return-top').on("click", function() {
     // Delete error and hide error box
     $(".new-tweet-error").text("");
@@ -47,7 +48,6 @@ $(document).ready(function() {
     // Cursor focus on new tweet text area
     $('#tweet-text').focus();
   });
-  // https://stackoverflow.com/questions/1144805/scroll-to-the-top-of-the-page-using-javascript
 
 });
 

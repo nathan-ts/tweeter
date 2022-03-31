@@ -27,7 +27,6 @@ nav {
   font-size: 0.7em;
   margin-right: 1.5em;
   height: 100%;
-  /* border: 0.2em solid #854b6c; */
 
   display: flex;
   flex-flow: column nowrap;
@@ -35,6 +34,7 @@ nav {
   text-align: center;
 }
 
+/* Style new-tweet button  */
 .new-link .fas {
   color: #ff0000;
   height: 1em;
@@ -42,6 +42,24 @@ nav {
 
 .new-link .fas:hover {
   animation: bounce linear infinite 0.7s;
+}
+
+/* Animation for new-tweet button */
+@keyframes bounce {
+  0%{
+    padding-top: 0;
+    padding-bottom: 10px;
+  }
+  
+  50%{
+    padding-top: 10px;
+    padding-bottom: 0;
+  }
+  
+  100%{
+    padding-top: 0;
+    padding-bottom: 10px;
+  }
 }
 
 /* Button to return to top */
@@ -59,24 +77,6 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-/* Animation for btn-return-top */
-@keyframes bounce {
-  0%{
-    padding-top: 0;
-    padding-bottom: 10px;
-  }
-  
-  50%{
-    padding-top: 10px;
-    padding-bottom: 0;
-  }
-  
-  100%{
-    padding-top: 0;
-    padding-bottom: 10px;
-  }
 }
 
 /* Scroll div for IntersectionObserver */
