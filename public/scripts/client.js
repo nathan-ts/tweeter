@@ -154,11 +154,12 @@ $( document ).ready(function() {
   
   // Custom submit behaviour for new-tweet-form
   $('#new-tweet-form').submit(function( event ) {
-    // Get tweet text from form
-    const tweetText = $(this).children('#tweet-text')[0].value;
-    $(".new-tweet-error").slideUp('fast'); // hide error message on submit, and show if required
     // Block default behaviour of reloading page
     event.preventDefault(); 
+    // Get tweet text from form
+    const tweetText = $(this).children('#tweet-text')[0].value;
+    $(".new-tweet-error").text("");
+    $(".new-tweet-error").slideUp('fast'); // hide error message on submit, and show if required
     // Data validation of tweet (not empty OR <= 140 chars)
     // can be DRYed up
     if (tweetText.length > 140) {
@@ -208,6 +209,7 @@ $( document ).ready(function() {
   // Button behaviour for new tweet in nav-bar
   $('.new-link').on("click", function() {
     $('.new-tweet').slideToggle('fast');
+    $('#tweet-text').focus();
   });
 
 });

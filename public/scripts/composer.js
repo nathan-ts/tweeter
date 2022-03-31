@@ -34,7 +34,7 @@ $(document).ready(function() {
     $('.btn-return-top').fadeOut('slow');
   }, {
     root: null,
-    threshold: 0.1, // set offset 0.1 means trigger if atleast 10% of element in viewport
+    threshold: 0.05, // set offset 0.1 means trigger if atleast 10% of element in viewport
   })
   // https://stackoverflow.com/questions/123999/how-can-i-tell-if-a-dom-element-is-visible-in-the-current-viewport
 
@@ -44,9 +44,9 @@ $(document).ready(function() {
 
   // Button behaviour for return-to-top button visible when header scrolled out of view
   $('.btn-return-top').on("click", function() {
-    $('.new-tweet').show();
+    $('.new-tweet').slideDown('fast');
     document.getElementsByTagName('html')[0].scrollIntoView({ behavior: "smooth" })
-    $('.tweet-text').focus();
+    $('#tweet-text').focus();
   });
   // https://stackoverflow.com/questions/1144805/scroll-to-the-top-of-the-page-using-javascript
 

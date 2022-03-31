@@ -46,7 +46,9 @@ nav {
 .btn-return-top {
   position: fixed;
   height: 5vw;
+  min-height: 1.5em;
   width: 5vw;
+  min-width: 1.5em;
   bottom: 2.5vw;
   right: 2.5vw;
   border-radius: 50%; 
