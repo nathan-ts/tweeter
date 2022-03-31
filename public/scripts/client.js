@@ -208,8 +208,12 @@ $( document ).ready(function() {
 
   // Button behaviour for new tweet in nav-bar
   $('.new-link').on("click", function() {
+    // Delete error and hide error box
+    $(".new-tweet-error").text("");
+    $(".new-tweet-error").hide();
+    // Toggle new-tweet compose area
     $('.new-tweet').slideToggle('fast');
-    $('#tweet-text').focus();
+    $('#tweet-text').focus(); // Put cursor on text box
   });
 
 });

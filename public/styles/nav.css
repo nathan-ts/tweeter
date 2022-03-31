@@ -5,6 +5,7 @@ nav {
   min-height: 120px;
   height: 5em;
   width: 100%;
+  padding: 1em;
   z-index: 999; /* 999 is top */
   position: sticky;
   top: 0;
@@ -17,7 +18,7 @@ nav {
 
 .logo {
   display: flex;
-  padding: 1.5em;
+  padding: 1em;
   font-size: 1.7em;
 }
 
