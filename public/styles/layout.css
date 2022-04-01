@@ -48,7 +48,7 @@ main {
 header.page-header {
   width: 100%;
   position: relative;
-  height: 500px;
+  height: 23em;
 }
 
 /* Other nav styling in nav.csss */
@@ -65,6 +65,7 @@ nav {
     position: sticky;
     top: max(25vh, calc(5vw + 5em));
     height: 50vh;
+    min-height: 16em;
   }
 
   main {

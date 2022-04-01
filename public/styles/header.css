@@ -3,7 +3,7 @@ header.page-header {
   
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
 
   /* This darkens and blends the background */
@@ -12,6 +12,18 @@ header.page-header {
   background-blend-mode: darken;
   background-size: cover;
 
+  /* flex-basis: 0; */
+  /* flex-grow: 1 */
+}
+
+.profile-pic {
+  display: flex;
+  flex: auto;
+}
+
+img.pfp {
+  object-fit: contain;
+  min-height: 2em;
 }
 
 .header-username {
